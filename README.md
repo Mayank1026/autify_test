@@ -13,19 +13,19 @@ Before running the script, you need to build the Docker image. Make sure you are
 
 ```bash
 sudo docker build -t my-fetch-app .
-
+```
 
 ## Fetch and Save Web Content
 To fetch and save web content, run the following command:
 
 ```bash
 sudo docker run -v "$(pwd)":/app my-fetch-app ruby fetch.rb [URL1] [URL2] ...
-
+```
 Replace [URL1], [URL2], and so on with the URLs you want to fetch and save. For example:
 
 ```bash
 sudo docker run -v "$(pwd)":/app my-fetch-app ruby fetch.rb https://www.google.com https://autify.com
-
+```
 This command will fetch the content of the specified URLs and save them as HTML files in the current directory.
 
 ## Fetch Metadata for Previously Fetched URLs
@@ -33,6 +33,7 @@ To fetch metadata for previously fetched URLs, use the --metadata flag followed 
 
 ```bash
 sudo docker run -v "$(pwd)":/app my-fetch-app ruby fetch.rb --metadata https://www.google.com
+```
 
 This command will display the metadata for the specified URL(s) if it was previously fetched and saved.
 
